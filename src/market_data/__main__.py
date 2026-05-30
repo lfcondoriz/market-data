@@ -6,15 +6,21 @@ from market_data.transform.candles import transform_binance_klines
 def main():
     client = create_binance_client()
 
+    symbol = "BTCUSDT"
+    interval = "1m"
+
     raw = fetch_klines(
         client=client,
-        symbol="BTCUSDT",
-        interval="1m",
+        symbol=symbol,
+        interval=interval,
         limit=10,
     )
 
-    candles = transform_binance_klines(raw)
-
+    candles = transform_binance_klines(
+        raw=raw,
+        symbol=symbol,
+        interval=interval,
+    )
     print(candles)
 
 
