@@ -1,7 +1,7 @@
 from binance_sdk_derivatives_trading_usds_futures.derivatives_trading_usds_futures import (
-    DerivativesTradingUsdsFutures,
-    ConfigurationRestAPI,
     DERIVATIVES_TRADING_USDS_FUTURES_REST_API_PROD_URL,
+    ConfigurationRestAPI,
+    DerivativesTradingUsdsFutures,
 )
 
 from market_data.core.config import Settings

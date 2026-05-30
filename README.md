@@ -86,7 +86,23 @@ uv run market-data
 ### Install development dependencies
 
 ```bash
-uv add --dev pytest black ruff
+uv add --dev pytest ruff
+```
+
+### Code Quality
+
+#### Ruff
+To run Ruff for linting and formatting:
+
+```bash
+# Check for linting issues
+uv run ruff check src/market_data
+
+# Fix linting issues automatically
+uv run ruff check . --fix
+
+# Format code
+uv run ruff format .
 ```
 
 ## Learn more
