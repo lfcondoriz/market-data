@@ -1,15 +1,15 @@
 from market_data.connectors.binance.client import create_binance_client
-from market_data.connectors.binance.klines import fetch_klines
 from market_data.transform.candles import transform_binance_klines
+from market_data.connectors.binance.klines import kline_candlestick_data
 
 
 def main():
     client = create_binance_client()
 
     symbol = "BTCUSDT"
-    interval = "1m"
+    interval = "1M"
 
-    raw = fetch_klines(
+    raw = kline_candlestick_data(
         client=client,
         symbol=symbol,
         interval=interval,
@@ -20,7 +20,9 @@ def main():
         raw=raw,
         symbol=symbol,
         interval=interval,
+        exchange="binance",
     )
+
     print(candles)
 
 
